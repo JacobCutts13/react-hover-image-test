@@ -26,8 +26,30 @@ button.active {
 }
 
 .movie {
-  color: blue;
+    position: relative;
+    text-align: center;
+    color: grey;
+    margin: 1em;
 }
+
+.movie-img {
+    position: relative;
+    color: black;
+}
+
+
+.top-left {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+  .bottom-left {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
 
 .filter button {
   margin-right: 2rem;

@@ -7,12 +7,14 @@ export interface IMovie {
   title: string;
   backdrop_path: string;
   genre_ids: number[];
+  id: number;
 }
 
 function App(): JSX.Element {
   const [popMovies, setPopMovies] = useState<IMovie[]>([]);
   const [filteredMovies, setFilteredMovies] = useState<IMovie[]>([]);
   const [filter, setFilter] = useState<number>(0); //0=all 28=action 35=comedy
+  const [hoverID, setHoverID] = useState<number>(0)
 
   useEffect(() => {
     fetchMovies();
@@ -42,7 +44,7 @@ function App(): JSX.Element {
           {popMovies.length > 1 &&
             filteredMovies.map((movie: IMovie) => (
               <div key={movie.title}>
-                <Movie movie={movie} />
+                <Movie movie={movie} hoverID={hoverID} setHoverID={setHoverID}/>
               </div>
             ))}
         </AnimatePresence>
